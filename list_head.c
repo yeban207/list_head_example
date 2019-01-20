@@ -40,7 +40,7 @@ static int __init mylist_init(void)
 	{
 		sprintf(pstudent[i].name, "student%d", i+1);
 		pstudent[i].num = i + 1;
-		list_add(&(pstudent[i].list), studnet_list);
+		list_add(&(pstudent[i].list), &studnet_list);
 	}
 	
 	list_for_each(pos, &studnet_list)
@@ -53,7 +53,7 @@ static int __init mylist_init(void)
 			kfree(pstudent);		
 			return -2;
 		}
-		printf(KERN_ALERT "studet %d, name = %s\n", tmp_student->num, tmp_student->name);
+		printk(KERN_ALERT "studet %d, name = %s\n", tmp_student->num, tmp_student->name);
 	}
 
 	return 0;
@@ -63,7 +63,7 @@ static void __exit mylist_exit(void)
 {
 	printf(KERN_ALERT "mylist_head module uninstall!\n");
 	int i;
-	for (i = 0; i < 5; i++)
+	for(i = 0; i < 5; i++)
 	{
 		list_del(&(pstudent[i].list));
 	}
@@ -73,6 +73,6 @@ static void __exit mylist_exit(void)
 module_init(mylist_init);
 module_exit(mylist_exit);
 MODULE_LICENSE("GPL v2");
-MOUDE_AUTHOR("LJQ");
-MODUEL_DESCRIPTION("A sample list_head example!");
+MOUDLE_AUTHOR("LJQ");
+MODULE_DESCRIPTION("A sample list_head example!");
 MODULE_ALIAS("list_head example!");
