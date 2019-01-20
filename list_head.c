@@ -74,5 +74,5 @@ module_init(mylist_init);
 module_exit(mylist_exit);
 MODULE_LICENSE("GPL v2");
 MOUDE_AUTHOR("LJQ");
-MODUEL_DESCRIPTION("a sample list_head example!");
+MODUEL_DESCRIPTION("A sample list_head example!");
 MODULE_ALIAS("list_head example!");
