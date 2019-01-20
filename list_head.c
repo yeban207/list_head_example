@@ -61,8 +61,8 @@ static int __init mylist_init(void)
 
 static void __exit mylist_exit(void)
 {
-	printf(KERN_ALERT "mylist_head module uninstall!\n");
-	int i;
+	printK(KERN_ALERT "mylist_head module uninstall!\n");
+	int i = 0;
 	for(i = 0; i < 5; i++)
 	{
 		list_del(&(pstudent[i].list));
@@ -73,6 +73,6 @@ static void __exit mylist_exit(void)
 module_init(mylist_init);
 module_exit(mylist_exit);
 MODULE_LICENSE("GPL v2");
-MOUDLE_AUTHOR("LJQ");
+MODULE_AUTHOR("LJQ");
 MODULE_DESCRIPTION("A sample list_head example!");
 MODULE_ALIAS("list_head example!");
